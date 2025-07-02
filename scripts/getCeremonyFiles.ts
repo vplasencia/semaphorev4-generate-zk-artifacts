@@ -1,3 +1,6 @@
+// This script copies the WASM and R1CS files for the Semaphore Trusted Setup Ceremony,
+// facilitated by P0tion, into the ceremony-artifacts directory.
+
 import { mkdirSync, copyFileSync } from "fs"
 
 if (process.argv.length === 4) {

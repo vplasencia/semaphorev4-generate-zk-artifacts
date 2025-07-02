@@ -29,7 +29,7 @@ if [ -f ./ptau/powersOfTau28_hez_final_${PTAU}.ptau ]; then
     echo "----- powersOfTau28_hez_final_${PTAU}.ptau already exists -----"
 else
     echo "----- Download powersOfTau28_hez_final_${PTAU}.ptau -----"
-    wget -P ./ptau https://hermez.s3-eu-west-1.amazonaws.com/powersOfTau28_hez_final_${PTAU}.ptau
+    wget -P ./ptau https://storage.googleapis.com/zkevm/ptau/powersOfTau28_hez_final_${PTAU}.ptau
 fi
 
 # Build directory path
@@ -65,11 +65,18 @@ snarkjs plonk verify ${BUILD_DIR}/verification_key.json ${BUILD_DIR}/public.json
 
 echo "----- Generate Solidity verifier -----"
 # Generate a Solidity verifier that allows verifying proofs on Ethereum blockchain
-snarkjs zkey export solidityverifier ${BUILD_DIR}/${CIRCUIT}_final.zkey ${BUILD_DIR}/${CIRCUIT}PlonkVerifier.sol
-# Update the solidity version in the Solidity verifier
-sed -i "s/>=0.7.0 <0.9.0;/^0.8.4;/g" ${BUILD_DIR}/${CIRCUIT}PlonkVerifier.sol
+snarkjs zkey export solidityverifier ${BUILD_DIR}/${CIRCUIT}_final.zkey ${BUILD_DIR}/${CAP_CIRCUIT}PlonkVerifier.sol
+
 # Update the contract name in the Solidity verifier
-sed -i "s/contract PlonkVerifier/contract ${CIRCUIT^}PlonkVerifier/g" ${BUILD_DIR}/${CIRCUIT}PlonkVerifier.sol
+# OSTYPE is a built-in variable that detects the Operative System
+# darwin* is the OSTYPE for MacOS
+# Cross-platform sed command
+# macOS requires sed -i "", while Linux works with sed -i alone
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    sed -i "" "s/contract PlonkVerifier/contract ${CAP_CIRCUIT}PlonkVerifier/g" "${BUILD_DIR}/${CAP_CIRCUIT}PlonkVerifier.sol"
+else
+    sed -i "s/contract PlonkVerifier/contract ${CAP_CIRCUIT}PlonkVerifier/g" "${BUILD_DIR}/${CAP_CIRCUIT}PlonkVerifier.sol"
+fi
 
 echo "----- Generate and print parameters of call -----"
 # Generate and print parameters of call

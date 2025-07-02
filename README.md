@@ -61,3 +61,33 @@ circom compiler 2.2.2
 ```bash
 snarkjs@0.7.5
 ```
+
+## Production Trusted Setup Ceremony
+
+The P0tion project is used for the production Trusted Setup Ceremony.
+
+Steps to follow after the production Trusted Setup Ceremony is finished:
+
+1. Clone this repo: https://github.com/vplasencia/semaphorev4-generate-zk-artifacts and run `yarn` to install dependencies.
+
+2. Add the zkey files to a folder called `p0tion-artifacts`.
+
+3. Run `yarn export-keys`.
+
+This will generate two files:
+
+-   A file called `verification-keys.json` with the verification keys for the Semaphore proof package.
+
+-   A file called `contract-verification-keys.json` with the `VK_POINTS` values for the Semaphore verifier contract.
+
+4. Update the Semaphore repo.
+
+-   Update this file with the new values in the `verification-keys.json` file in the `semaphorev4-generate-zk-artifacts` project.
+
+https://github.com/semaphore-protocol/semaphore/blob/main/packages/proof/src/verification-keys.json
+
+-   Update contract variable with the new values in the `contract-verification-keys.json` file in the `semaphorev4-generate-zk-artifacts` project :
+
+https://github.com/semaphore-protocol/semaphore/blob/5d513f92fb2369ab5abc1cd0b0612968465262e0/packages/contracts/contracts/base/SemaphoreVerifier.sol#L29
+
+5. Release a new Semaphore version.

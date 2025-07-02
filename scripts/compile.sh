@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variable to store the name of the circuit
-CIRCUIT=sudoku
+CIRCUIT=semaphore
 
 # In case there is a circuit name as input
 if [ "$1" ]; then
@@ -31,4 +31,4 @@ mkdir -p ${BUILD_DIR}
 # The `--O2` should only be used with Groth16, not Plonk or Fflonk.
 # The `-l` flags are used to include libraries that the circuit depends on.
 # Make sure to adjust the paths to the libraries as needed.
-circom ${PATH_CIRCUIT}/${CIRCUIT}.circom --r1cs --wasm --sym --c --O2 -o ${BUILD_DIR} -l ./node_modules/@zk-kit/circuits/circom -l ./node_modules/circomlib/circuits
+circom ${PATH_CIRCUIT}/${CIRCUIT}.circom --r1cs --wasm --sym --c --O2 -o ${BUILD_DIR} -l ./node_modules/@zk-kit/binary-merkle-root.circom/src -l ./node_modules/circomlib/circuits

@@ -55,9 +55,9 @@ The zk-artifacts needed to use Semaphore will be inside a folder named `artifact
 ## Versions used to generate the zk artifacts for Semaphore v4
 
 ```bash
-circom compiler 2.1.7
+circom compiler 2.2.2
 ```
 
 ```bash
-snarkjs@0.7.4
+snarkjs@0.7.5
 ```

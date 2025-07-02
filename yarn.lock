@@ -418,57 +418,61 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zk-kit/baby-jubjub@npm:1.0.0-beta":
-  version: 1.0.0-beta
-  resolution: "@zk-kit/baby-jubjub@npm:1.0.0-beta"
+"@zk-kit/baby-jubjub@npm:1.0.3":
+  version: 1.0.3
+  resolution: "@zk-kit/baby-jubjub@npm:1.0.3"
   dependencies:
-    "@zk-kit/utils": "npm:1.0.0-beta"
-  checksum: 10c0/5c04c47205dd98679e22e624d11091334c8e4fec4e5e800134931666d54b3dbcbba62ae9a42f47d0b95de3d8ca48f95150d36ebe0d4e0ff462f275d3c9ad26b8
+    "@zk-kit/utils": "npm:1.2.1"
+  checksum: 10c0/daf40c0d51732bf7a488d24afd5900a17a2a361b67a344cfa487ad1eda7f29b7f6eae96c440ec9a484f197db03895220495b6c656683bfad445523039c5bc98c
   languageName: node
   linkType: hard
 
-"@zk-kit/circuits@npm:^1.0.0-beta":
-  version: 1.0.0-beta
-  resolution: "@zk-kit/circuits@npm:1.0.0-beta"
+"@zk-kit/binary-merkle-root.circom@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@zk-kit/binary-merkle-root.circom@npm:2.0.0"
   dependencies:
     circomlib: "npm:^2.0.5"
-  checksum: 10c0/0e73afec1174d892c569c619077dedbe7d1409a867c52cad18028e1351c39e2edcc032227fb7968c3804a2359fd8107ad00a496bfe4c9dc8336ce039987b7322
+  checksum: 10c0/1f6145a6c70334138cdb5c48f7851e306f728abc71760f7ce6ae81bdfb8dd2e4158a70b4b6df09073edde805a6653f96d49d583d92e249aeba3607060be97023
   languageName: node
   linkType: hard
 
-"@zk-kit/eddsa-poseidon@npm:1.0.0-beta":
-  version: 1.0.0-beta
-  resolution: "@zk-kit/eddsa-poseidon@npm:1.0.0-beta"
+"@zk-kit/eddsa-poseidon@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@zk-kit/eddsa-poseidon@npm:1.1.0"
   dependencies:
-    "@zk-kit/baby-jubjub": "npm:1.0.0-beta"
-    "@zk-kit/utils": "npm:1.0.0-beta.4"
+    "@zk-kit/baby-jubjub": "npm:1.0.3"
+    "@zk-kit/utils": "npm:1.2.1"
+    blakejs: "npm:^1.2.1"
     buffer: "npm:6.0.3"
-  checksum: 10c0/0ca52a0f7cd45e72a496b33cc4a4bf10fb02e6b7df563ff96e2fd8536744de8cbd5a5fecd34aa412a6c7e7b200d04d75bb822624fbcb20b3216d2ee15504a0e0
+    poseidon-lite: "npm:0.3.0"
+  checksum: 10c0/c7eb1bb884426a6b2d1dd03632aff39b1ebafd704460799dcc1fee057e2a08500f8294c564bed3d6853ce706b5ea1a5d29b0ed7855387bc89e427b983776769a
   languageName: node
   linkType: hard
 
-"@zk-kit/imt@npm:2.0.0-beta.4":
-  version: 2.0.0-beta.4
-  resolution: "@zk-kit/imt@npm:2.0.0-beta.4"
-  checksum: 10c0/287312ec15b6adcc883f33767ef3f35504440729c30d535f89d2200fc12813f3b9e3ed5df2ba415544e019945e1e40e0a8d6c528c6aa931ac4c63f2310309262
+"@zk-kit/lean-imt@npm:2.2.3":
+  version: 2.2.3
+  resolution: "@zk-kit/lean-imt@npm:2.2.3"
+  dependencies:
+    "@zk-kit/utils": "npm:1.3.0"
+  checksum: 10c0/46aefeb9f7d79dee9b944e3943627ff08a7266bc1824230298fa730d542c124fc81aa90cf2205c2bdcfe5d7516ba599f47d594313cc6d33603809de9f4c816e6
   languageName: node
   linkType: hard
 
-"@zk-kit/utils@npm:1.0.0-beta":
-  version: 1.0.0-beta
-  resolution: "@zk-kit/utils@npm:1.0.0-beta"
+"@zk-kit/utils@npm:1.2.1":
+  version: 1.2.1
+  resolution: "@zk-kit/utils@npm:1.2.1"
   dependencies:
     buffer: "npm:^6.0.3"
-  checksum: 10c0/14e158311ac5c0cddb1c3f9295a26be44308d3c0e37e34f636f35e1bb6388d4ba3f47d3f8f8c7259cd4097bd9b1ac90d0bc986ed7b4d1045760ca642a0b0e5ba
+  checksum: 10c0/6e6163806074ceb3b0b94e12e0471563f61aa4de2c11aa0d37c290c5961f8671317aec7e4069edbd35a34b58602da8e94bbd99fb664a99dc4d95147ccdf63371
   languageName: node
   linkType: hard
 
-"@zk-kit/utils@npm:1.0.0-beta.4":
-  version: 1.0.0-beta.4
-  resolution: "@zk-kit/utils@npm:1.0.0-beta.4"
+"@zk-kit/utils@npm:1.3.0":
+  version: 1.3.0
+  resolution: "@zk-kit/utils@npm:1.3.0"
   dependencies:
     buffer: "npm:^6.0.3"
-  checksum: 10c0/32d96cd8dae6d74d6da4f61e46ac4931d123373986b6a23bc7123d9309f59f08beeab6e7f7709d4a396391a8b1c48c247e86e758a959ec06e2f752b3bae2af1a
+  checksum: 10c0/e48b6d319eea6247efdc2c7c93140406adf20edc072000ac5e865f7758f653340d310a640603e70940f7e8041fffeb118c4a071618de7dc1d170f6c628195905
   languageName: node
   linkType: hard
 
@@ -750,6 +754,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"blakejs@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "blakejs@npm:1.2.1"
+  checksum: 10c0/c284557ce55b9c70203f59d381f1b85372ef08ee616a90162174d1291a45d3e5e809fdf9edab6e998740012538515152471dc4f1f9dbfa974ba2b9c1f7b9aad7
+  languageName: node
+  linkType: hard
+
 "bluebird@npm:^3.7.2":
   version: 3.7.2
   resolution: "bluebird@npm:3.7.2"
@@ -924,21 +935,21 @@ __metadata:
     "@types/snarkjs": "npm:^0"
     "@typescript-eslint/eslint-plugin": "npm:^6.18.1"
     "@typescript-eslint/parser": "npm:^6.18.1"
-    "@zk-kit/circuits": "npm:^1.0.0-beta"
-    "@zk-kit/eddsa-poseidon": "npm:1.0.0-beta"
-    "@zk-kit/imt": "npm:2.0.0-beta.4"
+    "@zk-kit/binary-merkle-root.circom": "npm:2.0.0"
+    "@zk-kit/eddsa-poseidon": "npm:1.1.0"
+    "@zk-kit/lean-imt": "npm:2.2.3"
     chai: "npm:^4.4.0"
     circom_tester: "npm:^0.0.20"
-    circomlib: "npm:^2.0.5"
+    circomlib: "npm:2.0.5"
     eslint: "npm:^8.56.0"
     eslint-config-airbnb-base: "npm:^15.0.0"
     eslint-config-airbnb-typescript: "npm:^17.1.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-import: "npm:^2.29.1"
     mocha: "npm:^10.2.0"
-    poseidon-lite: "npm:0.2.0"
+    poseidon-lite: "npm:0.3.0"
     prettier: "npm:^3.1.1"
-    snarkjs: "npm:0.7.4"
+    snarkjs: "npm:0.7.5"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.3.3"
   languageName: unknown
@@ -955,14 +966,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"circom_runtime@npm:0.1.25":
-  version: 0.1.25
-  resolution: "circom_runtime@npm:0.1.25"
+"circom_runtime@npm:0.1.28":
+  version: 0.1.28
+  resolution: "circom_runtime@npm:0.1.28"
   dependencies:
-    ffjavascript: "npm:0.3.0"
+    ffjavascript: "npm:0.3.1"
   bin:
     calcwit: calcwit.js
-  checksum: 10c0/231f97810828c7ac297e891ebccd853999811ecb3003ee5d6c221f66bc51af77883121b60f2cd10a9338bde4a21ed150c0527b593b2ee0486fd23697644ee96e
+  checksum: 10c0/f2636b3cf553ea37701b527331ff740be7e31d51dc367c7f7bdffb69cf3a0d86c34ce215e4dbc0ad47f9c221c129ab11b111c6814e009c4d469592d73ab3c513
   languageName: node
   linkType: hard
 
@@ -981,7 +992,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"circomlib@npm:^2.0.5":
+"circomlib@npm:2.0.5, circomlib@npm:^2.0.5":
   version: 2.0.5
   resolution: "circomlib@npm:2.0.5"
   checksum: 10c0/6709e3df9e16c09015e69f9ee01d5fde340b888743a204be27e37880337db61f013f4a6b9573935fb410ddb02a0e89367edf509b89182a0c2e07c8a4777c91a4
@@ -1639,6 +1650,17 @@ __metadata:
     wasmcurves: "npm:0.2.2"
     web-worker: "npm:1.2.0"
   checksum: 10c0/2899db6ab67162eb9a7a052c420d31b0e15c6fd12bc738c48559e0a926649f1d11afe9cfa2611ff13f816b2fd9fa047fb11f6f8682f0dea4f84c4dd9f5dc7c3c
+  languageName: node
+  linkType: hard
+
+"ffjavascript@npm:0.3.1":
+  version: 0.3.1
+  resolution: "ffjavascript@npm:0.3.1"
+  dependencies:
+    wasmbuilder: "npm:0.0.16"
+    wasmcurves: "npm:0.2.2"
+    web-worker: "npm:1.2.0"
+  checksum: 10c0/6928afe37cdbe9a88a9901a37d0abbdcfa61a8533517cb86e2584bf2701eaa10ce2bfa1d417499042f9b10b79bc058ec0ecc14d3fdc6cb55d21bfcac3d1c4521
   languageName: node
   linkType: hard
 
@@ -3058,10 +3080,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"poseidon-lite@npm:0.2.0":
-  version: 0.2.0
-  resolution: "poseidon-lite@npm:0.2.0"
-  checksum: 10c0/4d92a4deea6d9ce622a33a5e166c905c29255b0a4eb1d9ba62c382ea5de796c75be259c7006bbdb5351895c6cbe9d8c48f842cbc3a39862e5c17c87e27dc73df
+"poseidon-lite@npm:0.3.0":
+  version: 0.3.0
+  resolution: "poseidon-lite@npm:0.3.0"
+  checksum: 10c0/03494ea69be0dc3ced055b7f1505ff73848002c68332d52a5cf5f00d1a657693317e1ffc790b84ccaf9a0f5f61bf05e1a453eab60c385c98701a6580edead49c
   languageName: node
   linkType: hard
 
@@ -3400,23 +3422,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"snarkjs@npm:0.7.4":
-  version: 0.7.4
-  resolution: "snarkjs@npm:0.7.4"
+"snarkjs@npm:0.7.5":
+  version: 0.7.5
+  resolution: "snarkjs@npm:0.7.5"
   dependencies:
     "@iden3/binfileutils": "npm:0.0.12"
     bfj: "npm:^7.0.2"
     blake2b-wasm: "npm:^2.4.0"
-    circom_runtime: "npm:0.1.25"
+    circom_runtime: "npm:0.1.28"
     ejs: "npm:^3.1.6"
     fastfile: "npm:0.0.20"
-    ffjavascript: "npm:0.3.0"
+    ffjavascript: "npm:0.3.1"
     js-sha3: "npm:^0.8.0"
     logplease: "npm:^1.2.15"
     r1csfile: "npm:0.0.48"
   bin:
     snarkjs: build/cli.cjs
-  checksum: 10c0/530abe64711f73bd44e24caca1be47bba15eb6017a6ce46dd1b655d416376065c39042df8cb8ebb7cf74291760ad7442b19dc947ea6e57d28abbb14e23d7c6d2
+  checksum: 10c0/bc9eb1dac9c5248a4952635edc015185c5f9f268f6d2d29b32934e0b08bc284caaeba7fbc6d712ecff8a4e17c66433ba6b2f2ab5d1a6bb4704c30110fb18e9aa
   languageName: node
   linkType: hard
 

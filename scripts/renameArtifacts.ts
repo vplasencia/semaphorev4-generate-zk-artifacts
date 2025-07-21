@@ -7,7 +7,7 @@ if (process.argv.length === 4) {
     mkdirSync(`./p0tion-repo-artifacts`, { recursive: true })
 
     for (let i = start; i <= end; i += 1) {
-        copyFileSync(`./p0tion-artifacts/semaphorev4-${i}_final.zkey`, `./p0tion-repo-artifacts/semaphore-${i}.zkey`)
+        copyFileSync(`./p0tion-artifacts/semaphore-${i}_final.zkey`, `./p0tion-repo-artifacts/semaphore-${i}.zkey`)
     }
 } else {
     console.error("Expected one argument!")

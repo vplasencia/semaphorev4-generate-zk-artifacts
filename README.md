@@ -78,16 +78,16 @@ This will generate two files:
 
 -   A file called `verification-keys.json` with the verification keys for the Semaphore proof package.
 
--   A file called `contract-verification-keys.json` with the `VK_POINTS` values for the Semaphore verifier contract.
+-   A file called `contract-verification-keys-hex.txt` with the `VK_POINTS` values for the Semaphore verifier contract.
 
 4. Update the Semaphore repo.
 
--   Update this file with the new values in the `verification-keys.json` file in the `semaphorev4-generate-zk-artifacts` project.
+-   Copy/paste `verification-keys.json` file from the `semaphorev4-generate-zk-artifacts` project into:
 
 https://github.com/semaphore-protocol/semaphore/blob/main/packages/proof/src/verification-keys.json
 
--   Update contract variable with the new values in the `contract-verification-keys.json` file in the `semaphorev4-generate-zk-artifacts` project :
+-   Update contract variable `VK_POINT_BYTES` with the new values from the `contract-verification-keys-hex.txt` file in the `semaphorev4-generate-zk-artifacts` project :
 
-https://github.com/semaphore-protocol/semaphore/blob/5d513f92fb2369ab5abc1cd0b0612968465262e0/packages/contracts/contracts/base/SemaphoreVerifier.sol#L29
+https://github.com/semaphore-protocol/semaphore/blob/v4.12.0/packages/contracts/contracts/base/SemaphoreVerifierKeyPts.sol#L12
 
 5. Release a new Semaphore version.

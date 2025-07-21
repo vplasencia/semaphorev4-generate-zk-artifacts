@@ -27,7 +27,7 @@ async function main() {
         if (bytes.length < 64) {
             bytes = `${"0".repeat(64 - bytes.length)}${bytes}`
         }
-        console.info(`hex"${bytes}"`)
+        // console.info(`hex"${bytes}"`)
         VK_POINTS.push(`hex"${bytes}"`)
     })
 

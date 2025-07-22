@@ -24,7 +24,10 @@
         "convert-verifications-keys-to-hex": "ts-node ./scripts/convertVKPtsBigIntToHex.ts",
         "export-keys": "yarn export-verification-key && yarn merge:verification-keys 1 32 && yarn convert-verifications-keys-to-hex",
         "p0tion-get-snark-artifacts-repo-files": "ts-node ./scripts/generate-snark-artifacts-repo-files.ts 1 32 && yarn export-keys",
-        "run:all": "yarn remove:files 1 32 && yarn create:files 1 32 && yarn execute 1 32 && yarn copy:files 1 32 && yarn get:ceremony-files 1 32"
+        "run:all": "yarn remove:files 1 32 && yarn create:files 1 32 && yarn execute 1 32 && yarn copy:files 1 32 && yarn get:ceremony-files 1 32",
+        "verify:r1cs-wasm": "chmod u+x ./scripts/p0tion-verify-artifacts/verify-r1cs-wasm.sh && ./scripts/p0tion-verify-artifacts/verify-r1cs-wasm.sh",
+        "verify:final-zkey": "chmod u+x ./scripts/p0tion-verify-artifacts/verify-final-zkey.sh && ./scripts/p0tion-verify-artifacts/verify-final-zkey.sh",
+        "verify:beacon-zkey": "chmod u+x ./scripts/p0tion-verify-artifacts/verify-beacon-zkey.sh && ./scripts/p0tion-verify-artifacts/verify-beacon-zkey.sh"
     },
     "devDependencies": {
         "@types/chai": "^4.3.11",

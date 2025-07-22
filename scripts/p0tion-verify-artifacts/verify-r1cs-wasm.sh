@@ -16,7 +16,7 @@ if [ "$1" ]; then
 fi
 
 # In case there is an end value as input
-if [ "$1" ]; then
+if [ "$2" ]; then
     END=$2
 fi
 

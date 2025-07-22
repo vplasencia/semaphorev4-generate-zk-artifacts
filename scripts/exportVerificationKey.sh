@@ -16,5 +16,5 @@ fi
 
 for ((i = $START; i <= $END; i++)); do
     echo "----- semaphore-$i -----"
-    snarkjs zkey export verificationkey p0tion-artifacts/semaphore-${i}_final.zkey artifacts/${i}/semaphore.json
+    snarkjs zkey export verificationkey p0tion-artifacts/semaphore-${i}_final.zkey snark-artifacts-repo-files/semaphore-${i}.json
 done

@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# This script checks if the R1CS and WASM files generated locally
+# This command checks whether the locally generated R1CS and WASM files
 # match the expected files in the ceremony-artifacts directory.
-# The goal is to ensure that using the same Semaphore circuit
-# consistently produces identical R1CS and WASM files 
-# (R1CS and WASM files are deterministic).
+# The goal is to ensure that using the same Semaphore circuit 
+# consistently produces identical R1CS and WASM files, as 
+# these files are deterministic.
 
 START=1
 

@@ -72,15 +72,19 @@ Steps to follow after the production Trusted Setup Ceremony is finished:
 
 2. Add the zkey files to a folder called `p0tion-artifacts`.
 
-3. Run `yarn export-keys`.
+3. Run `yarn p0tion-get-snark-artifacts-repo-files`.
 
-This will generate two files:
+This will generate a folder and two files:
+
+-   A folder called `snark-artifacts-repo-files` with the files to upload to the [`snark-artifacts`](https://github.com/privacy-scaling-explorations/snark-artifacts) repo.
 
 -   A file called `verification-keys.json` with the verification keys for the Semaphore proof package.
 
 -   A file called `contract-verification-keys-hex.txt` with the `VK_POINTS` values for the Semaphore verifier contract.
 
-4. Update the Semaphore repo.
+4. Create PR to add the zk artifacts from `snark-artifacts-repo-files` to the `snark-artifacts` repo.
+
+5. Update the Semaphore repo.
 
 -   Copy/paste `verification-keys.json` file from the `semaphorev4-generate-zk-artifacts` project into:
 
@@ -90,4 +94,4 @@ https://github.com/semaphore-protocol/semaphore/blob/main/packages/proof/src/ver
 
 https://github.com/semaphore-protocol/semaphore/blob/v4.12.0/packages/contracts/contracts/base/SemaphoreVerifierKeyPts.sol#L12
 
-5. Release a new Semaphore version.
+6. Release a new Semaphore version.

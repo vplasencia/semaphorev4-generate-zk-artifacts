@@ -55,9 +55,79 @@ The zk-artifacts needed to use Semaphore will be inside a folder named `artifact
 ## Versions used to generate the zk artifacts for Semaphore v4
 
 ```bash
-circom compiler 2.1.7
+circom compiler 2.2.2
 ```
 
 ```bash
-snarkjs@0.7.4
+snarkjs@0.7.5
 ```
+
+## Steps for the Production Trusted Setup Ceremony
+
+The P0tion project is used for the production Trusted Setup Ceremony.
+
+Steps to follow after the production Trusted Setup Ceremony is finished:
+
+1. Clone this repo: https://github.com/vplasencia/semaphorev4-generate-zk-artifacts and run `yarn` to install dependencies.
+
+2. Add the zkey files to a folder called `p0tion-artifacts`.
+
+3. Run `yarn p0tion-get-snark-artifacts-repo-files`.
+
+This will generate a folder and two files:
+
+-   A folder called `snark-artifacts-repo-files` with the files to upload to the [`snark-artifacts`](https://github.com/privacy-scaling-explorations/snark-artifacts) repo.
+
+-   A file called `verification-keys.json` with the verification keys for the Semaphore proof package.
+
+-   A file called `contract-verification-keys-hex.txt` with the `VK_POINTS` values for the Semaphore verifier contract.
+
+4. Create PR to add the zk artifacts from `snark-artifacts-repo-files` to the `snark-artifacts` repo.
+
+5. Update the Semaphore repo.
+
+-   Copy/paste `verification-keys.json` file from the `semaphorev4-generate-zk-artifacts` project into:
+
+https://github.com/semaphore-protocol/semaphore/blob/main/packages/proof/src/verification-keys.json
+
+-   Update contract variable `VK_POINT_BYTES` with the new values from the `contract-verification-keys-hex.txt` file in the `semaphorev4-generate-zk-artifacts` project :
+
+https://github.com/semaphore-protocol/semaphore/blob/v4.12.0/packages/contracts/contracts/base/SemaphoreVerifierKeyPts.sol#L12
+
+6. Release a new Semaphore version.
+
+## Steps to Verify the ZK Artifacts
+
+### Verify R1CS and WASM
+
+```bash
+yarn verify:r1cs-wasm
+```
+
+This command checks whether the locally generated R1CS and WASM files match the expected files in the `ceremony-artifacts` directory.
+
+The goal is to ensure that using the same Semaphore circuit consistently produces identical R1CS and WASM files, as these files are deterministic.
+
+### Verify Final ZKEY
+
+#### Steps
+
+1. In the root project folder, create a new folder called `p0tion-ptau`.
+
+2. Add the PTAU file 14. The PTAU files can be found at the following url: https://pse-trusted-setup-ppot.s3.eu-central-1.amazonaws.com/pot28_0080/index.html
+
+3. Run:
+
+```bash
+yarn verify:final-zkey
+```
+
+This command verifies whether the final ZKEY files were generated correctly.
+
+### Verify beacon
+
+```bash
+yarn verify:beacon-zkey <beacon-hash>
+```
+
+This command checks whether the beacon hash was applied correctly.

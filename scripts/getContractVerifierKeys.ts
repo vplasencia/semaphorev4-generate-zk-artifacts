@@ -1,5 +1,12 @@
 import { readFileSync, writeFileSync } from "fs"
 
+// This script reads the verification keys from a JSON file and processes them to create a new JSON file
+// containing the contract verification keys in a specific format.
+// The output file is named "contract-verification-keys.json".
+
+// Note: This script is no longer necessary since the verification keys in contracts in Semaphore
+// are now hexadecimal.
+
 const vkeys = JSON.parse(readFileSync(`./verification-keys.json`, "utf8"))
 
 const contractVkPoints = []

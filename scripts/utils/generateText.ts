@@ -1,5 +1,5 @@
 import { derivePublicKey, deriveSecretScalar } from "@zk-kit/eddsa-poseidon"
-import { LeanIMT } from "@zk-kit/imt"
+import { LeanIMT } from "@zk-kit/lean-imt"
 import { poseidon2 } from "poseidon-lite"
 
 export function createCircuitCode(num: number) {
@@ -18,13 +18,9 @@ export function createInput(maxDepth: number) {
 
     const tree = new LeanIMT((a, b) => poseidon2([a, b]), [commitment, 1n])
 
-    const { siblings: merkleProofSiblings, index } = tree.generateProof(0)
-
-    const merkleProofIndices: number[] = []
+    const { siblings: merkleProofSiblings, index: merkleProofIndex } = tree.generateProof(0)
 
     for (let i = 0; i < maxDepth; i += 1) {
-        merkleProofIndices.push((index >> i) & 1)
-
         if (merkleProofSiblings[i] === undefined) {
             merkleProofSiblings[i] = BigInt(0)
         }
@@ -33,7 +29,7 @@ export function createInput(maxDepth: number) {
     const input = {
         secret: deriveSecretScalar(privateKey),
         merkleProofLength: merkleProofSiblings.length,
-        merkleProofIndices,
+        merkleProofIndex,
         merkleProofSiblings,
         scope,
         message

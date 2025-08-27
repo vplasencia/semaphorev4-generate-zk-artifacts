@@ -24,8 +24,6 @@ ptau
 
 artifacts
 
-repo-artifacts
-
 verification-keys.json
 
 contract-verification-keys.json
@@ -37,3 +35,13 @@ ceremony-artifacts
 p0tion-artifacts
 
 p0tion-repo-artifacts
+
+contract-verification-keys-hex.txt
+
+snark-artifacts-repo-files
+
+p0tion-ptau
+
+p0tion-last-zkey
+
+production-artifacts
